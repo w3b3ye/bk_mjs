@@ -1,4 +1,5 @@
 //Array and Map function
+'use strict'
 
 const numbers = [65, 44, 12, 4]
 const newArr = numbers.map(myFunction)
@@ -32,3 +33,27 @@ const indexOf = (arr, value) => {
 }
 
 console.log(indexOf([10, 20, 4, 30], 4)) //Here we want to know the index of 4, which is '2'
+
+console.log("Elements of previously defined 'numbers' array with index.")
+numbers.forEach((element, index) => { console.log(`${index}: ${element}`) })
+
+console.log("Elements of previously defined 'numbers' array.")
+numbers.forEach(element => { console.log(`${element}`) })
+
+const enclose = (tag, contents) => `<${tag}>${contents}</${tag}>`
+const listItems = console.log(numbers.map(i => enclose('li', i)))
+
+
+/* const listItems1 = console.log(numbers
+    .map(htmlEscape)
+    .map(i => enclose('li', i)))
+ */
+
+const items = ['Green eggs>', 'ham', 'Mr <& Mrs T Bloody Mary mix']
+console.log('// Pipeline: First escape elements, then enclose them')
+const htmlEscape = str => [....str].map(c => c === '<' ? '&lt;'
+    : c === '&' ? '&amp;' : c).join('')
+let listItems1 = items
+    .map(htmlEscape)
+    .map(i => enclose('li', i))
+console.log('listItems:', listItems1) // ['<li>Green eggs</li>', '<li>ham</li>', '<li>Mr &amp; Mrs T Bloody Mary mix</li>']
