@@ -51,7 +51,7 @@ const listItems = console.log(numbers.map(i => enclose('li', i)))
 
 const items = ['Green eggs>', 'ham', 'Mr <& Mrs T Bloody Mary mix']
 console.log('// Pipeline: First escape elements, then enclose them')
-const htmlEscape = str => [....str].map(c => c === '<' ? '&lt;'
+const htmlEscape = str => [...str].map(c => c === '<' ? '&lt;'
     : c === '&' ? '&amp;' : c).join('')
 let listItems1 = items
     .map(htmlEscape)
