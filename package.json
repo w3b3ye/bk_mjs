@@ -1,0 +1,22 @@
+{
+  "name": "bk_mjs",
+  "version": "1.0.0",
+  "description": "[ Repo for book - \"Modern JavaScript for the Impatient\" ]",
+  "main": "chp1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w3b3ye/bk_mjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/w3b3ye/bk_mjs/issues"
+  },
+  "homepage": "https://github.com/w3b3ye/bk_mjs#readme",
+  "dependencies": {
+    "escape-html": "^1.0.3"
+  }
+}
