@@ -49,11 +49,28 @@ const listItems = console.log(numbers.map(i => enclose('li', i)))
     .map(i => enclose('li', i)))
  */
 
-const items = ['Green eggs>', 'ham', 'Mr <& Mrs T Bloody Mary mix']
+const items = ['Green eggs>', ' ', 'ham', 'Mr <& Mrs T Bloody Mary mix']
 console.log('// Pipeline: First escape elements, then enclose them')
+
 const htmlEscape = str => [...str].map(c => c === '<' ? '&lt;'
     : c === '&' ? '&amp;' : c).join('')
-let listItems1 = items
-    .map(htmlEscape)
-    .map(i => enclose('li', i))
+
+let listItems1 = enclose('ul',
+    items
+        .filter(i => i.trim() !== '') //This will filter out empty strings
+        .map(htmlEscape) //This will remove escape characters like >
+        .map(i => enclose('li', i)) //This will create HTML tags from array items
+        .join('')) //This will join everything together
+
 console.log('listItems:', listItems1) // ['<li>Green eggs</li>', '<li>ham</li>', '<li>Mr &amp; Mrs T Bloody Mary mix</li>']
+
+// setTimeout(() => console.log('Goodbye'), 10000) // Function will say Goodbye after 10 sec pause 
+
+const sayLater = (text, when) => {
+    let task = () => console.log(text)
+    setTimeout(task, when)
+}
+
+sayLater('Hello', 5000)  // Function will say Hello after 5 sec pause
+sayLater('Goodbye', 10000) // Function will say Goodbye after 10 sec pause
+
