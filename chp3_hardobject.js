@@ -18,5 +18,5 @@ sallysAccount.deposit(500)
 harrysAccount.withdraw(100)
 let harrysBalance = harrysAccount.getBalance()
 let sallysBalance = sallysAccount.getBalance()
-console.log('harrysBalance:', harrysBalance) // 600
+console.log('harrysBalance:', harrysBalance) // 400
 console.log('sallysBalance:', sallysBalance) // 1500
